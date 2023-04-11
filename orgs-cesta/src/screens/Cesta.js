@@ -13,10 +13,9 @@ const Cesta = () => {
       <Image source={topo} style={estilos.topo} />
       {/*Se colocar o texto em cima da imagme, e mudar pra absolute, ele fica embaixo*/}
       <Text style={estilos.titulo}>Detalhe da cesta</Text>
-
       <View style={estilos.cesta}>
         <Text style={estilos.nome}>Cesta de verduras</Text>
-        <Text>Jenny Jack Farm</Text>
+        <Text style={estilos.nomeFazenda}>Jenny Jack Farm</Text>
         <Text>
           Uma cesta com ótimo produos selecionados da fazendo, direto para sua
           cozinha
@@ -51,6 +50,10 @@ const estilos = StyleSheet.create({
     lineHeight: 42,
     fontWeight: "bold",
   },
+  nomeFazenda: {
+    fontSize: 16,
+    lineHeight: 26,
+  }
 });
 
 /* Em React Native, a unidade de medida mais comumente usada para o estilo de layout é o "ponto" ou "pixel de densidade independente" (DIP ou DP). 
