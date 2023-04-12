@@ -2,9 +2,11 @@ import React from "react";
 
 import { Image, Text, StyleSheet, Dimensions, View } from "react-native";
 
-import topo from "../../assets/topo.png";
-
 const width = Dimensions.get("screen").width;
+
+//Images
+import topo from "../../assets/topo.png";
+import logo from "../../assets/logo.png";
 
 const Cesta = () => {
   // return <Text>Cesta</Text>;
@@ -15,12 +17,15 @@ const Cesta = () => {
       <Text style={estilos.titulo}>Detalhe da cesta</Text>
       <View style={estilos.cesta}>
         <Text style={estilos.nome}>Cesta de verduras</Text>
-        <Text style={estilos.nomeFazenda}>Jenny Jack Farm</Text>
-        <Text>
-          Uma cesta com ótimo produos selecionados da fazendo, direto para sua
+        <View style={estilos.fazenda}>
+          <Image source={logo} style={estilos.imagemFazenda} />
+          <Text style={estilos.nomeFazenda}>Jenny Jack Farm</Text>
+        </View>
+        <Text style={estilos.descricao}>
+          Uma cesta com ótimos produtos selecionados da fazenda, direto para sua
           cozinha
         </Text>
-        <Text>R$ 40,00</Text>
+        <Text style={estilos.preco}>R$ 40,00</Text>
       </View>
     </>
   );
@@ -50,10 +55,32 @@ const estilos = StyleSheet.create({
     lineHeight: 42,
     fontWeight: "bold",
   },
+  fazenda: {
+    // display: "flex", //No react native, o display flex é padrão. Não preciso declarar isso
+    flexDirection: "row",
+    paddingVertical: 12
+  },
+  imagemFazenda: {
+    width: 32,
+    height: 32,
+  },
   nomeFazenda: {
     fontSize: 16,
     lineHeight: 26,
-  }
+    marginLeft: 12,
+  },
+  descricao: {
+    color: "#A3A3A3",
+    fontSize: 16,
+    lineHeight: 26,
+  },
+  preco: {
+    color: "#2A9F85",
+    fontWeight: "bold",
+    fontSize: 26,
+    lineHeight: 42,
+    marginTop: 8,
+  },
 });
 
 /* Em React Native, a unidade de medida mais comumente usada para o estilo de layout é o "ponto" ou "pixel de densidade independente" (DIP ou DP). 
