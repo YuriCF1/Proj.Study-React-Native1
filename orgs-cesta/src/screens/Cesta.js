@@ -35,6 +35,7 @@ const estilos = StyleSheet.create({
   topo: {
     width: "100%",
     height: (578 / 768) * width,
+    // fontFamily: "Montserrat"
   },
   titulo: {
     position: "absolute",
@@ -54,6 +55,8 @@ const estilos = StyleSheet.create({
     fontSize: 26,
     lineHeight: 42,
     fontWeight: "bold",
+    fontFamily: "Montserrat_700Bold",
+    color: "red"
   },
   fazenda: {
     // display: "flex", //No react native, o display flex é padrão. Não preciso declarar isso
