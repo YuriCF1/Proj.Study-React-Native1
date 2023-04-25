@@ -9,7 +9,6 @@ import topo from "../../assets/topo.png";
 import logo from "../../assets/logo.png";
 
 const Cesta = () => {
-  // return <Text>Cesta</Text>;
   return (
     <>
       <Image source={topo} style={estilos.topo} />
@@ -54,9 +53,7 @@ const estilos = StyleSheet.create({
     color: "#464646",
     fontSize: 26,
     lineHeight: 42,
-    fontWeight: "bold",
-    fontFamily: "Montserrat_700Bold",
-    color: "red"
+    fontFamily: "MontB",
   },
   fazenda: {
     // display: "flex", //No react native, o display flex é padrão. Não preciso declarar isso
@@ -76,6 +73,7 @@ const estilos = StyleSheet.create({
     color: "#A3A3A3",
     fontSize: 16,
     lineHeight: 26,
+    fontFamily: "MontRegular"
   },
   preco: {
     color: "#2A9F85",
