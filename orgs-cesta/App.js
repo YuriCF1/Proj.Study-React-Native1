@@ -20,13 +20,12 @@ export default function App() {
   if (!fonteCarregada) {
     return <View />;
   }
+
   return (
     // <View style={styles.container}>
     <SafeAreaView>
       <StatusBar />
       <Cesta />
-      <Text style={{ fontFamily: "MontB" }}>Testando</Text>
-      <Text>Testando</Text>
       {/* <StatusBar style="auto" /> */}
     </SafeAreaView>
   );
