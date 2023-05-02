@@ -4,6 +4,9 @@ import { Image, Text, StyleSheet, Dimensions, View } from "react-native";
 
 const width = Dimensions.get("screen").width;
 
+//Components
+import Texto from "../components/Texto";
+
 //Images
 import topo from "../../assets/topo.png";
 import logo from "../../assets/logo.png";
@@ -13,17 +16,17 @@ const Cesta = () => {
     <>
       <Image source={topo} style={estilos.topo} />
       {/*Se colocar o texto em cima da imagme, e mudar pra absolute, ele fica embaixo*/}
-      <Text style={estilos.titulo}>Detalhe da cesta</Text>
+      <Texto style={estilos.titulo}>Detalhe da cesta</Texto>
       <View style={estilos.cesta}>
         <Text style={estilos.nome}>Cesta de verduras</Text>
         <View style={estilos.fazenda}>
           <Image source={logo} style={estilos.imagemFazenda} />
           <Text style={estilos.nomeFazenda}>Jenny Jack Farm</Text>
         </View>
-        <Text style={estilos.descricao}>
+        <Texto style={estilos.descricao}>
           Uma cesta com ótimos produtos selecionados da fazenda, direto para sua
           cozinha
-        </Text>
+        </Texto>
         <Text style={estilos.preco}>R$ 40,00</Text>
       </View>
     </>
@@ -58,7 +61,7 @@ const estilos = StyleSheet.create({
   fazenda: {
     // display: "flex", //No react native, o display flex é padrão. Não preciso declarar isso
     flexDirection: "row",
-    paddingVertical: 12
+    paddingVertical: 12,
   },
   imagemFazenda: {
     width: 32,
@@ -73,7 +76,6 @@ const estilos = StyleSheet.create({
     color: "#A3A3A3",
     fontSize: 16,
     lineHeight: 26,
-    fontFamily: "MontRegular"
   },
   preco: {
     color: "#2A9F85",
