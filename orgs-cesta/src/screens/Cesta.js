@@ -18,16 +18,16 @@ const Cesta = () => {
       {/*Se colocar o texto em cima da imagme, e mudar pra absolute, ele fica embaixo*/}
       <Texto style={estilos.titulo}>Detalhe da cesta</Texto>
       <View style={estilos.cesta}>
-        <Text style={estilos.nome}>Cesta de verduras</Text>
+        <Texto style={estilos.nome}>Cesta de verduras</Texto>
         <View style={estilos.fazenda}>
           <Image source={logo} style={estilos.imagemFazenda} />
-          <Text style={estilos.nomeFazenda}>Jenny Jack Farm</Text>
+          <Texto style={estilos.nomeFazenda}>Jenny Jack Farm</Texto>
         </View>
         <Texto style={estilos.descricao}>
           Uma cesta com ótimos produtos selecionados da fazenda, direto para sua
           cozinha
         </Texto>
-        <Text style={estilos.preco}>R$ 40,00</Text>
+        <Texto style={estilos.preco}>R$ 40,00</Texto>
       </View>
     </>
   );
@@ -56,7 +56,8 @@ const estilos = StyleSheet.create({
     color: "#464646",
     fontSize: 26,
     lineHeight: 42,
-    fontFamily: "MontB",
+    fontWeight: "bold",
+    // fontFamily: "MontB",
   },
   fazenda: {
     // display: "flex", //No react native, o display flex é padrão. Não preciso declarar isso
