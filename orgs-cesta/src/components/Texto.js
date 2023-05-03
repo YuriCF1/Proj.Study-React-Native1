@@ -13,10 +13,11 @@ const Texto = ({ children, style }) => {
 const estilos = StyleSheet.create({
   texto: {
     fontFamily: "MontRegular",
+    fontWeight: "normal",
   },
   textoNegrito: {
     fontFamily: "MontB",
-    fontWeight: "normal" //
+    fontWeight: "normal", //A família da fonte já é bold, e só funciona se o weight for 'normal'
   },
 });
 
