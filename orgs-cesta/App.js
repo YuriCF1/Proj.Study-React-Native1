@@ -9,7 +9,8 @@ import {
   useFonts,
 } from "@expo-google-fonts/montserrat";
 
-import Cesta from "./src/screens/Cesta";
+// import Cesta from "./src/screens/Cesta/Cesta";
+import Cesta from "./src/screens/Cesta"; //Direcionando só a pasta da Cesta, o react vai atrás do index.js
 
 export default function App() {
   let [fonteCarregada] = useFonts({
