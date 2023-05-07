@@ -12,6 +12,9 @@ import {
 // import Cesta from "./src/screens/Cesta/Cesta";
 import Cesta from "./src/screens/Cesta"; //Direcionando só a pasta da Cesta, o react vai atrás do index.js
 
+//Mocks
+import mock from './src/mocks/cesta'
+
 export default function App() {
   let [fonteCarregada] = useFonts({
     MontRegular: Montserrat_400Regular,
@@ -26,7 +29,9 @@ export default function App() {
     // <View style={styles.container}>
     <SafeAreaView>
       <StatusBar />
-      <Cesta />
+      {/* <Cesta cesta={mock}/> */}
+      {/* Passando o topo e detalhes, iterando */}
+      <Cesta {...mock}/> 
       {/* <StatusBar style="auto" /> */}
     </SafeAreaView>
   );
