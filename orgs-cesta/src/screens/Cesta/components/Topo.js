@@ -10,13 +10,12 @@ import Texto from "../../../components/Texto";
 //Images
 import topo from "../../../../assets/topo.png";
 
-
-const Topo = () => {
+const Topo = ({ titulo }) => {
   return (
     <>
       <Image source={topo} style={estilos.topo} />
       {/*Se colocar o texto em cima da imagme, e mudar pra absolute, ele fica embaixo*/}
-      <Texto style={estilos.titulo}>Detalhe da cesta</Texto>
+      <Texto style={estilos.titulo}>{titulo}</Texto>
     </>
   );
 };
