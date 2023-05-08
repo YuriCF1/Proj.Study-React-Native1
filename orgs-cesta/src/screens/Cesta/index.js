@@ -13,10 +13,10 @@ import Detalhes from "./components/Detalhes";
 // import topo from "../../../assets/topo.png";
 // import logo from "../../../assets/logo.png";
 
-const Cesta = () => {
+const Cesta = ({topo, detalhes}) => {
   return (
     <>
-      <Topo />
+      <Topo {...topo} />
       {/* <Image source={topo} style={estilos.topo} /> */}
       {/*Se colocar o texto em cima da imagme, e mudar pra absolute, ele fica embaixo*/}
       {/* <Texto style={estilos.titulo}>Detalhe da cesta</Texto> */}
@@ -34,7 +34,7 @@ const Cesta = () => {
       </View> */}
 
       <View style={estilos.cesta}>
-        <Detalhes />
+        <Detalhes {...detalhes} />
       </View>
     </>
   );
