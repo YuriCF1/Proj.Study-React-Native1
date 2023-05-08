@@ -7,22 +7,20 @@ import Texto from "../../../components/Texto";
 import { Image, View, StyleSheet } from "react-native";
 
 //Images
-import logo from "../../../../assets/logo.png";
+// import logo from "../../../../assets/logo.png";
 
-
-const Detalhes = () => {
+const Detalhes = ({nome, logoFazenda, nomeFazenda, descricao, preco}) => {
   return (
     <>
-      <Texto style={estilos.nome}>Cesta de verduras</Texto>
+      <Texto style={estilos.nome}>{nome}</Texto>
       <View style={estilos.fazenda}>
-        <Image source={logo} style={estilos.imagemFazenda} />
-        <Texto style={estilos.nomeFazenda}>Jenny Jack Farm</Texto>
+        <Image source={logoFazenda} style={estilos.imagemFazenda} />
+        <Texto style={estilos.nomeFazenda}>{nomeFazenda}</Texto>
       </View>
       <Texto style={estilos.descricao}>
-        Uma cesta com ótimos produtos selecionados da fazenda, direto para sua
-        cozinha
+      {descricao}
       </Texto>
-      <Texto style={estilos.preco}>R$ 40,00</Texto>
+      <Texto style={estilos.preco}>{preco}</Texto>
     </>
   );
 };
@@ -64,3 +62,24 @@ const estilos = StyleSheet.create({
 });
 
 export default Detalhes;
+
+// Antes do mocking
+
+/*
+const Detalhes = () => {
+  return (
+    <>
+      <Texto style={estilos.nome}>Cesta de verduras</Texto>
+      <View style={estilos.fazenda}>
+        <Image source={logo} style={estilos.imagemFazenda} />
+        <Texto style={estilos.nomeFazenda}>Jenny Jack Farm</Texto>
+      </View>
+      <Texto style={estilos.descricao}>
+        Uma cesta com ótimos produtos selecionados da fazenda, direto para sua
+        cozinha
+      </Texto>
+      <Texto style={estilos.preco}>R$ 40,00</Texto>
+    </>
+  );
+};
+*/
