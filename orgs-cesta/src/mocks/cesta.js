@@ -11,6 +11,7 @@ const cesta = {
     descricao:
       "Uma cesta com ótimos produtos selecionados da fazenda, direto para sua cozinha",
     preco: "R$ 40,00",
+    botao: "Comprar"
   },
 };
 
