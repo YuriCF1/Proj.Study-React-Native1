@@ -4,12 +4,25 @@ import React from "react";
 import Texto from "../../../components/Texto";
 
 //Hooks
-import { Image, View, StyleSheet } from "react-native";
+import {
+  Image,
+  View,
+  StyleSheet,
+  Button,
+  TouchableOpacity,
+} from "react-native";
 
 //Images
 // import logo from "../../../../assets/logo.png";
 
-const Detalhes = ({nome, logoFazenda, nomeFazenda, descricao, preco}) => {
+const Detalhes = ({
+  nome,
+  logoFazenda,
+  nomeFazenda,
+  descricao,
+  preco,
+  botao,
+}) => {
   return (
     <>
       <Texto style={estilos.nome}>{nome}</Texto>
@@ -17,10 +30,13 @@ const Detalhes = ({nome, logoFazenda, nomeFazenda, descricao, preco}) => {
         <Image source={logoFazenda} style={estilos.imagemFazenda} />
         <Texto style={estilos.nomeFazenda}>{nomeFazenda}</Texto>
       </View>
-      <Texto style={estilos.descricao}>
-      {descricao}
-      </Texto>
+      <Texto style={estilos.descricao}>{descricao}</Texto>
       <Texto style={estilos.preco}>{preco}</Texto>
+      {/* <Button title={botao} /> */}
+      {/* O Button é muito simples e seu estilo varia de sistema, abaixo a alternativa */}
+      <TouchableOpacity style={estilos.botao} onPress={() =>{}}>
+        <Texto style={estilos.textoBotao}>{botao}</Texto>
+      </TouchableOpacity>
     </>
   );
 };
@@ -58,6 +74,19 @@ const estilos = StyleSheet.create({
     fontSize: 26,
     lineHeight: 42,
     marginTop: 8,
+  },
+  botao: {
+    marginTop: 16,
+    backgroundColor: "#2A9F85",
+    paddingVertical: 16,
+    borderRadius: 12,
+  },
+  textoBotao: {
+    textAlign: "center",
+    color: "#ffffff",
+    fontSize: 16,
+    lineHeight: 26,
+    fontWeight: "bold"
   },
 });
 
