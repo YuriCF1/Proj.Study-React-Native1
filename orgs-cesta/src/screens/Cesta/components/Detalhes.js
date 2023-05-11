@@ -12,6 +12,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import Botao from "../../../components/Botao"
+
 //Images
 // import logo from "../../../../assets/logo.png";
 
@@ -37,6 +39,7 @@ const Detalhes = ({
       <TouchableOpacity style={estilos.botao} onPress={() =>{}}>
         <Texto style={estilos.textoBotao}>{botao}</Texto>
       </TouchableOpacity>
+      {/* <Botao>Testando componentização</Botao> */}
     </>
   );
 };
