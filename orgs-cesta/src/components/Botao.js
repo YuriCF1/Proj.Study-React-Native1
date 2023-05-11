@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {TouchableOpacity} from "react-native"
+import {TouchableOpacity, StyleSheet} from "react-native"
 import Texto from './Texto'
 
 const Botao = ({children}) => {
