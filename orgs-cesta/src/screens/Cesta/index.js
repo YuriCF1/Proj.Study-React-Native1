@@ -1,6 +1,13 @@
 import React from "react";
 
-import { Image, Text, StyleSheet, Dimensions, View } from "react-native";
+import {
+  Image,
+  Text,
+  StyleSheet,
+  Dimensions,
+  View,
+  ScrollView,
+} from "react-native";
 
 // const width = Dimensions.get("screen").width;
 
@@ -8,14 +15,16 @@ import { Image, Text, StyleSheet, Dimensions, View } from "react-native";
 // import Texto from "../../components/Texto";
 import Topo from "./components/Topo";
 import Detalhes from "./components/Detalhes";
+import Itens from "./components/Itens"
 
 //Images
 // import topo from "../../../assets/topo.png";
 // import logo from "../../../assets/logo.png";
 
-const Cesta = ({topo, detalhes}) => {
+const Cesta = ({ topo, detalhes, itens }) => {
   return (
-    <>
+    //Permitindo um scroll
+    <ScrollView>
       <Topo {...topo} />
       {/* <Image source={topo} style={estilos.topo} /> */}
       {/*Se colocar o texto em cima da imagme, e mudar pra absolute, ele fica embaixo*/}
@@ -35,8 +44,9 @@ const Cesta = ({topo, detalhes}) => {
 
       <View style={estilos.cesta}>
         <Detalhes {...detalhes} />
+        <Itens {...itens} />
       </View>
-    </>
+    </ScrollView>
   );
 };
 
