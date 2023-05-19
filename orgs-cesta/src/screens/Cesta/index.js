@@ -7,15 +7,16 @@ import {
   Dimensions,
   View,
   ScrollView,
+  FlatList,
 } from "react-native";
 
 // const width = Dimensions.get("screen").width;
 
 //Components
-// import Texto from "../../components/Texto";
+import Texto from "../../components/Texto";
 import Topo from "./components/Topo";
 import Detalhes from "./components/Detalhes";
-import Itens from "./components/Itens"
+import Item from "./components/Itens";
 
 //Images
 // import topo from "../../../assets/topo.png";
@@ -24,8 +25,26 @@ import Itens from "./components/Itens"
 const Cesta = ({ topo, detalhes, itens }) => {
   return (
     //Permitindo um scroll
-    <ScrollView>
-      <Topo {...topo} />
+    // <ScrollView>
+    // FlatList é a melhor opção para carregar lista, pois renderiza apenas o que estiver aparecendo na tela
+    <>
+      <FlatList
+        data={itens.lista}
+        renderItem={Item}
+        keyExtractor={({ nome }) => nome}
+        ListHeaderComponent={() => {
+          return (
+            <>
+              <Topo {...topo} />
+              <View style={estilos.cesta}>
+                <Detalhes {...detalhes} />
+                <Texto style={estilos.titulo}>{itens.titulo}</Texto>
+              </View>
+            </>
+          );
+        }}
+      />
+      {/* <Topo {...topo} /> */}
       {/* <Image source={topo} style={estilos.topo} /> */}
       {/*Se colocar o texto em cima da imagme, e mudar pra absolute, ele fica embaixo*/}
       {/* <Texto style={estilos.titulo}>Detalhe da cesta</Texto> */}
@@ -42,17 +61,27 @@ const Cesta = ({ topo, detalhes, itens }) => {
         <Texto style={estilos.preco}>R$ 40,00</Texto>
       </View> */}
 
-      <View style={estilos.cesta}>
+      {/* <View style={estilos.cesta}>
         <Detalhes {...detalhes} />
-        <Itens {...itens} />
-      </View>
-    </ScrollView>
+        <Item {...itens} />
+      </View> */}
+    </>
   );
 };
+{
+  /* // </ScrollView> */
+}
 
 // console.log(topo);
 
 const estilos = StyleSheet.create({
+  titulo: {
+    color: "#464646",
+    fontWeight: "Bold",
+    marginTop: 32,
+    fontSize: 20,
+    lineHeight: 32,
+  },
   // topo: {
   //   width: "100%",
   //   height: (578 / 768) * width,
