@@ -13,13 +13,12 @@ import {
 import Cesta from "./src/screens/Cesta"; //Direcionando só a pasta da Cesta, o react vai atrás do index.js
 
 //Mocks
-import mock from './src/mocks/cesta'
+import mock from "./src/mocks/cesta";
 
 //Keep the splash screen visible while we fetch resources
-import * as SplashScreen from 'expo-splash-screen';
+import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
 SplashScreen.preventAutoHideAsync();
-
 
 export default function App() {
   let [fonteCarregada] = useFonts({
@@ -30,10 +29,10 @@ export default function App() {
   //Liberando a splashScreen apenas quando as fontes forem carregadas
   //https://docs.expo.dev/versions/latest/sdk/splash-screen/
   const onLayoutRootView = useCallback(async () => {
-    if(fonteCarregada) {
-      await SplashScreen.hideAsync()
+    if (fonteCarregada) {
+      await SplashScreen.hideAsync();
     }
-  }, [fonteCarregada])
+  }, [fonteCarregada]);
 
   if (!fonteCarregada) {
     return <View />;
@@ -41,11 +40,11 @@ export default function App() {
 
   return (
     // <View style={styles.container}>
-    <SafeAreaView onLayout={onLayoutRootView}>
+    <SafeAreaView onLayout={onLayoutRootView} style={{ flex: 1 }}>
       <StatusBar />
       {/* <Cesta cesta={mock}/> */}
       {/* Passando o topo e detalhes, iterando */}
-      <Cesta {...mock}/> 
+      <Cesta {...mock} />
       {/* <StatusBar style="auto" /> */}
     </SafeAreaView>
   );
